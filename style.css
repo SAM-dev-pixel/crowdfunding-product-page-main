@@ -234,7 +234,7 @@ img {
   position: relative;
   left: 50%;
   transform: translate(-50%, -5%);
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 .top-icon {
   width: 3.5rem;
@@ -255,27 +255,27 @@ img {
   text-align: center;
 }
 .main-title {
-  font-size: 1.75rem;
+  font-size: clamp(1rem, 6vw, 1.75rem);
   font-weight: 700;
   color: var(--black);
 }
 .text {
-  font-size: 1rem;
+  font-size: clamp(0.65rem, 3.5vw, 1rem);
 }
-.header-sect p {
-  margin: 1.75em 0;
+.header-sect .text {
+  padding: 1.625em 0;
 }
 .btn-contain {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.4em;
 }
 .btn-back {
-  font-size: 0.94rem;
+  /* font-size: 1rem; */
+  font-size: clamp(0.75rem, 4vw, 1rem);
   color: white;
   font-weight: 700;
-  padding: 1.126em 2.75em;
+  padding: 1.12em 2.5em;
   display: inline-block;
   border-radius: 2rem;
   background: var(--moderate-cyan);
@@ -299,6 +299,9 @@ img {
   /* #main > *:not(:first-child) {
     padding: 2.75em 3em;
   } */
+  .header-sect .text {
+    padding: 1.625em 0 2.5em;
+  }
   .btn-bookmark {
     padding-right: 1.75em;
     display: flex;
@@ -324,7 +327,7 @@ img {
   border-bottom: 0.0425rem solid var(--dark-gray);
 }
 .part p {
-  font-size: 2rem;
+  font-size: 1.875rem;
   color: var(--black);
   font-weight: 800;
   display: flex;
@@ -333,7 +336,7 @@ img {
   gap: 0.25em;
 }
 .part span {
-  font-size: 0.78rem;
+  font-size: 1rem;
   color: var(--dark-gray);
   font-weight: 400;
 }
