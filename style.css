@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
 
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -191,13 +193,6 @@ img {
     cursor: pointer;
   }
 
-  .bg-header {
-    /* min-height: 25rem;
-    background: url(images/image-hero-desktop.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center; */
-  }
   .nav-links {
     width: max-content;
     display: flex;
@@ -247,7 +242,7 @@ img {
 #main > *:not(:first-child) {
   /* padding: 1.75em 6.6%; */
   padding: 6.6%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.625rem;
   border-radius: 0.5rem;
   background: #fff;
 }
@@ -325,11 +320,11 @@ img {
   }
 }
 
-.info-backed {
-  /* padding-top: 0 !important; */
-}
 .part {
-  padding: 0.75rem 0.75rem 0 0.75rem;
+  padding: 0.7rem;
+}
+.part:first-child {
+  padding-top: 0;
 }
 .part:not(:last-child) {
   border-bottom: 0.0425rem solid var(--dark-gray);
@@ -368,6 +363,7 @@ img {
   }
   .part {
     flex: 1;
+    padding: 0.7rem 0.7rem 0 0.7rem !important;
   }
   .part p {
     align-items: start;
@@ -423,13 +419,14 @@ img {
   font-weight: 400;
 }
 .btn-select {
-  font-size: 0.86rem;
+  font-size: clamp(0rem, 4vw, 0.875rem);
   color: white;
   font-weight: 700;
   padding: 1em 2.4em;
   display: inline-block;
   border-radius: 2rem;
   background: var(--moderate-cyan);
+  white-space: nowrap;
 }
 .out {
   position: relative;
@@ -487,9 +484,9 @@ img {
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 9999999;
-  opacity: 0;
+  /* opacity: 0; */
   overflow: scroll;
-  pointer-events: none;
+  /* pointer-events: none; */
   transition: 200ms;
 }
 .modal-container.show {
@@ -518,14 +515,14 @@ img {
 }
 #modal {
   position: absolute;
-  top: 6rem;
+  top: 30vh;
   left: 50%;
   padding: 1.75rem 1.25rem;
   transform: translateX(-50%);
   width: min(calc(100% - 3rem), 47em);
   background: white;
-  opacity: 0;
-  pointer-events: none;
+  /* opacity: 0; */
+  /* pointer-events: none; */
   transition: 200ms;
   border-radius: 0.5rem;
 }
@@ -679,8 +676,9 @@ img {
 @media (min-width: 47.75em) {
   #modal {
     padding: 2.75em 3em;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 50%;
+    transform: translate(-50%, -50%); */
+    /* transform: translateX(-50%); */
   }
   #modal .card-stuff {
     grid-template-columns: auto;
