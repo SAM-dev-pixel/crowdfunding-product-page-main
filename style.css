@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: 1px solid green;
 }
 :root {
   --moderate-cyan: hsl(176, 50%, 47%);
@@ -201,7 +202,7 @@ img {
     pointer-events: all;
     position: initial;
     transform: translateX(0);
-    border-radius: none;
+    border-radius: 0;
     overflow: none;
   }
   .nav-links li {
@@ -315,6 +316,10 @@ img {
   }
 }
 @media (width <= 34.375rem) {
+  .btn-back {
+    width: 100%;
+    margin-right: 0.625rem;
+  }
   .btn-bookmark span {
     display: none;
   }
@@ -607,35 +612,41 @@ img {
 
 .pledge-box form {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1em;
 }
 .full-input {
+  display: flex;
+  align-items: center;
   padding-left: 1rem;
   border-radius: 1.5rem;
   border: 0.0225rem solid var(--dark-gray);
 }
 .pledge-input {
   width: 4rem;
-  font-size: 0.86rem;
-  padding: 0.75em 1.25em;
+  font-size: clamp(0rem, 4vw, 0.875rem);
+  padding: 1.12em 1.68em 1.12em 0.625em;
   font-weight: 700;
   border: none;
   outline: none;
   background: none;
 }
 .btn-continue {
+  font-size: clamp(0rem, 4vw, 0.875rem);
   color: white;
-  font-size: 0.86rem;
   display: inline-block;
-  padding: 0.75em 1.25em;
+  padding: 1.12em 1.68em;
   font-weight: 700;
   background: var(--moderate-cyan);
   border-radius: 1.5rem;
   border: none;
   outline: none;
 }
-
+.pledge-input::placeholder {
+  font-size: 2rem;
+  color: red;
+}
 .success-box {
   width: min(calc(100% - 3rem), 600px);
   position: absolute;
