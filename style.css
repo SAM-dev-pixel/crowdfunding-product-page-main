@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px solid green;
+  /* outline: 1px solid green; */
 }
 :root {
   --moderate-cyan: hsl(176, 50%, 47%);
@@ -500,7 +500,6 @@ img {
   pointer-events: all;
 }
 .close-modal-btn {
-  width: max-content;
   position: absolute;
   top: 1rem;
   right: 0.25rem;
@@ -520,7 +519,7 @@ img {
   transform: rotate(-45deg) translate(-1px, -4px);
 }
 #modal {
-  width: min(calc(100% - 3rem), 47em);
+  width: min(calc(100% - 3.125rem), 45.625rem);
   margin: auto;
   padding: 1.75rem 1.25rem;
   position: relative;
@@ -619,14 +618,18 @@ img {
 .full-input {
   display: flex;
   align-items: center;
-  padding-left: 1rem;
+  justify-content: start;
+  padding-left: 1em;
   border-radius: 1.5rem;
   border: 0.0225rem solid var(--dark-gray);
 }
-.pledge-input {
-  width: 4rem;
+.full-input label {
   font-size: clamp(0rem, 4vw, 0.875rem);
-  padding: 1.12em 1.68em 1.12em 0.625em;
+}
+.pledge-input {
+  width: clamp(1rem, 20vw, 4rem);
+  font-size: clamp(0rem, 4vw, 0.875rem);
+  padding: 1em 1em 1em 0.625em;
   font-weight: 700;
   border: none;
   outline: none;

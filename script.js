@@ -1,13 +1,15 @@
+document.addEventListener("click", (e)=> console.log(e.target))
+
 // shows navbar background
 const header = document.querySelector('#header');
 ((page) => {
 
   page.addEventListener('scroll', () => {
-    (page.pageYOffset > 40) ? header.classList.add('show-bg'): header.classList.remove('show-bg');
+    (page.pageYOffset > 40) ? header.classList.add('show-bg') : header.classList.remove('show-bg');
   });
 
 })(window);
-
+// burger button clicked
 ((burger) => {
   
   const navLinks = document.querySelector('.nav-links');
@@ -38,15 +40,17 @@ document.querySelector('.btn-back').addEventListener('click', (e)=> {
   e.preventDefault();
   modalContainer.classList.add('show');
   modal.classList.add('show');
- document.body.classList.add('non-scroll');
+  document.body.classList.add('non-scroll');
   
 });
 // close modal
-document.querySelector('.close-modal-btn').addEventListener('click', ()=> {
+document.body.addEventListener('click', (e)=> {
   
- modalContainer.classList.remove('show');
- modal.classList.remove('show');
- document.body.classList.remove('non-scroll');
+ if(e.target.classList.contains("close-modal-btn") || e.target.classList.contains("close-modal-btn-line") || e.target.classList.contains("modal-container")) {
+  modalContainer.classList.remove('show');
+  modal.classList.remove('show');
+  document.body.classList.remove('non-scroll');
+ }
   
 });
 
@@ -113,6 +117,7 @@ const isThereAvtiveCard =(target)=> {
       
       modalContainer.classList.add('show');
       modal.classList.add('show');
+      document.body.classList.add("non-scroll")
       
       // show card active
       cardActivated.classList.add('active');
@@ -122,7 +127,7 @@ const isThereAvtiveCard =(target)=> {
     }
   });
   
-})(document.querySelectorAll('.stuffs-contain')[0]);
+})(document.querySelector('.stuffs-contain'));
 
 
 ((modalCard) => {
@@ -145,3 +150,5 @@ const isThereAvtiveCard =(target)=> {
   });
   
 })(document.getElementById('modal'));
+
+// console.log(document.querySelectorAll('.stuffs-contain'))
