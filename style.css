@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid green; */
 }
 :root {
   --moderate-cyan: hsl(176, 50%, 47%);
@@ -43,19 +42,13 @@ img {
 }
 
 .bg-header {
-  /* min-height: 16rem; */
   position: sticky;
   top: 0;
   left: 0;
   right: 0;
-  /* background: url(images/image-hero-mobile.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; */
 }
 .bg-header * {
   width: 100%;
-  /* height: 30vh; */
   min-height: 400px;
   object-fit: cover;
 }
@@ -78,7 +71,6 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  /* padding: 1.75rem 1.25rem; */
   padding: 3rem 1.25rem;
   z-index: 9999;
   transition: 0.3s;
@@ -229,26 +221,21 @@ img {
   width: min(calc(100% - 3.125rem), 45.625rem);
   position: relative;
   left: 50%;
-  transform: translate(-50%, -5%);
-  /* border: 1px solid green; */
+  transform: translate(-50%, -7%);
 }
 .top-icon {
-  /* width: 3.5rem; */
   width: min(16vw, 3.5rem);
   position: absolute;
-  /* top: -1.75rem; */
   left: 50%;
   transform: translate(-50%, -50%);
 }
 #main > *:not(:first-child) {
-  /* padding: 1.75em 6.6%; */
   padding: 6.6%;
   margin-bottom: 1.625rem;
   border-radius: 0.5rem;
   background: #fff;
 }
 .header-sect {
-  /* padding-top: 3.25rem !important; */
   padding-top: 8.5% !important;
   text-align: center;
 }
@@ -269,7 +256,6 @@ img {
   justify-content: space-between;
 }
 .btn-back {
-  /* font-size: 1rem; */
   font-size: clamp(0rem, 4vw, 1rem);
   color: white;
   font-weight: 700;
@@ -291,10 +277,8 @@ img {
   width: min(16vw, 3.5rem);
 }
 .btn-bookmark {
-  /* padding-right: 1.75em; */
   display: flex;
   align-items: center;
-  /* gap: 0.92em; */
   gap: 1.125rem;
   background: #eee;
   border-radius: 2rem;
@@ -308,9 +292,6 @@ img {
 }
 
 @media (min-width: 47.75em) {
-  /* #main > *:not(:first-child) {
-    padding: 2.75em 3em;
-  } */
   .header-sect .text {
     padding: 1.625em 0 2.5em;
   }
@@ -491,13 +472,16 @@ img {
   background: rgba(0, 0, 0, 0.4);
   z-index: 9999999;
   opacity: 0;
-  overflow: scroll;
+  overflow: auto;
   pointer-events: none;
   transition: 200ms;
 }
 .modal-container.show {
   opacity: 1;
   pointer-events: all;
+}
+.modal-container.no-scroll {
+  overflow: initial;
 }
 .close-modal-btn {
   position: absolute;
@@ -651,12 +635,12 @@ img {
   color: red;
 }
 .success-box {
-  width: min(calc(100% - 3rem), 600px);
+  width: min(calc(100% - 3.125rem), 33.75rem);
   position: absolute;
-  top: 50vh;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 1.25em;
+  padding: 6.6%;
   text-align: center;
   background: white;
   border-radius: 0.5rem;
@@ -669,15 +653,20 @@ img {
   pointer-events: all;
 }
 .success-box img {
-  margin-bottom: 0.75rem;
+  width: clamp(2rem, 20vw, 5.625rem);
+  margin: auto;
+  margin-bottom: 10%;
+}
+.success-box h4 {
+  font-size: clamp(0.75rem, 6vw, 1.5rem);
 }
 .success-box .text {
-  margin: 2em 0;
+  margin: 1.75em 0;
 }
 .btn-got {
   color: white;
-  font-size: 0.86rem;
-  font-weight: 500;
+  font-size: clamp(0.25rem, 4vw, 0.875rem);
+  font-weight: 700;
   padding: 1em 2.25em;
   display: inline-block;
   border: none;
@@ -689,9 +678,6 @@ img {
 @media (min-width: 47.75em) {
   #modal {
     padding: 2.75em 3em;
-    /* top: 50%;
-    transform: translate(-50%, -50%); */
-    /* transform: translateX(-50%); */
   }
   #modal .card-stuff {
     grid-template-columns: auto;
