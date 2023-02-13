@@ -35,11 +35,23 @@ const header = document.querySelector("#header");
 // show modal
 const modalContainer = document.querySelector(".modal-container");
 const modal = document.getElementById("modal");
-document.querySelector(".btn-back").addEventListener("click", (e) => {
-  e.preventDefault();
+
+function showModal(button) {
+  button.preventDefault();
   modalContainer.classList.add("show");
   modal.classList.add("show");
   document.body.classList.add("non-scroll");
+}
+function closeModal() {
+  modalContainer.classList.remove("no-scroll");
+  modalContainer.classList.remove("show");
+  modal.classList.remove("show");
+  successBox.classList.remove("show");
+  document.body.classList.remove("non-scroll");
+}
+
+document.querySelector(".btn-back").addEventListener("click", (e) => {
+  showModal(e);
 });
 // close modal
 document.body.addEventListener("click", (e) => {
@@ -48,11 +60,7 @@ document.body.addEventListener("click", (e) => {
     e.target.classList.contains("close-modal-btn-line") ||
     e.target.classList.contains("modal-container")
   ) {
-    modalContainer.classList.remove("no-scroll");
-    modalContainer.classList.remove("show");
-    modal.classList.remove("show");
-    successBox.classList.remove("show");
-    document.body.classList.remove("non-scroll");
+    closeModal();
   }
 });
 
@@ -66,11 +74,7 @@ const successBox = document.querySelector(".success-box");
       successBox.classList.add("show");
       modal.classList.remove("show");
     } else if (e.target.classList.contains("btn-got")) {
-      // close success box
-      modalContainer.classList.remove("no-scroll");
-      modalContainer.classList.remove("show");
-      successBox.classList.remove("show");
-      document.body.classList.remove("non-scroll");
+      closeModal();
     }
   });
 })(document.querySelector(".modal-container"));
@@ -101,15 +105,12 @@ const isThereAvtiveCard = (target) => {
 ((select) => {
   select.addEventListener("click", (e) => {
     if (e.target.classList.contains("btn-select")) {
-      e.preventDefault();
       let target = e.target.dataset.target;
       let cardActivated = document.querySelector(
         `.card-stuff[data-target='${target}'`
       );
 
-      modalContainer.classList.add("show");
-      modal.classList.add("show");
-      document.body.classList.add("non-scroll");
+      showModal(e);
 
       // show card active
       cardActivated.classList.add("active");
